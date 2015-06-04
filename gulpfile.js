@@ -1,12 +1,25 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var livereload = require('gulp-livereload');
- 
-gulp.task('css', function() {
-    livereload();
-});
- 
-gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch('css/*.css', ['css']);
+var notify = require('gulp-notify');
+var growl = require('gulp-notify-growl');
+var jscs = require('gulp-jscs');
+var jshint = require('gulp-jshint');
+
+// For windows users setup a growl notifier
+//var growlNotifier = growl();
+
+gulp.task('jscs', function() {
+    gulp.src('js/*.js')
+        .pipe(jscs())
+        .pipe(notify({
+            title: 'JSCS',
+            message: 'JSCS Passed. Let it fly!'
+        }))
+
+        /* Alternatively for Windows users
+        .pipe(notify({
+            title: 'JSCS',
+            message: 'JSCS Passed. Let it fly!',
+            notifier: growlNotifier
+        }))
+        */
 });
