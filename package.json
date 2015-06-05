@@ -2,26 +2,20 @@
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "backbone": "^1.2",
-    "bootstrap": "^3.0",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "backbone": "^1.2.1",
+    "bootstrap": "^3.3.4",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
-    "gulp-jscs": "^1.6.0",
-    "gulp-jshint": "^1.11.0",
     "gulp-notify": "^2.2.0",
-    "gulp-notify-growl": "^1.0.2",
-    "jquery": "^1.11",
-    "jshint-stylish": "^2.0.0",
     "underscore": "^1.8.3"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
