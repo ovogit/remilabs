@@ -41,3 +41,9 @@ Thumbs.db
 # Directories        #
 ######################
 node_modules
+
+# Images             #
+######################
+.svg
+.jpg
+.png
