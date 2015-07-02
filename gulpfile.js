@@ -19,7 +19,9 @@ var js = [
   assets.js+'backbone.js',
   assets.js+'vue.js',
   assets.js+'bootstrap.js',
-  assets.js+'**/*.js'
+  assets.js+'angular.js',
+  assets.js+'angular-ui-router.js',
+  assets.js+'main.js'
 ];
 gulp.task('less', function () {
   gulp.src('assets/less/*.less').pipe(less()).pipe(gulp.dest('css'));
