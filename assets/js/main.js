@@ -1,4 +1,4 @@
 (function(){
   window.App = {};
-  window.vent = _.extend(Backbone.Events);
+  window.vent = _.extend({}, Backbone.Events);
 })();
