@@ -1,40 +1,29 @@
 var gulp = require('gulp');
-var less = require('gulp-less');
-var watch = require('gulp-watch');
-var concat = require('gulp-concat');
-var order = require('gulp-order');
+var mocha = require('gulp-mocha');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var babelify = require('babelify');
 
-// For windows users setup a growl notifier
-//var growlNotifier = growl();
-var assets = {
-  js: './assets/js/',
-  css: './assets/css/'
-}
-var css = [
-  assets.css+'bootstrap.css'
-];
-var js = [
-  assets.js+'jquery.js',
-  assets.js+'underscore.js',
-  assets.js+'backbone.js',
-  assets.js+'vue.js',
-  assets.js+'bootstrap.js',
-  assets.js+'angular.js',
-  assets.js+'angular-ui-router.js',
-  assets.js+'main.js'
-];
-gulp.task('less', function () {
-  gulp.src('assets/less/*.less').pipe(less()).pipe(gulp.dest('css'));
-});
-gulp.task('css',function(){
-  gulp.src('assets/css/**/*.css').pipe(gulp.dest('css'));
-});
 gulp.task('js', function () {
-  return gulp.src(js).pipe(concat('all.js')).pipe(gulp.dest('js'));
+  return browserify('./js/app.js')
+  // es6 support
+  .transform(babelify, {stage: 0})
+  .bundle()
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('js'));
 });
 
-gulp.task('watch',function(){
-  gulp.watch('assets/less/**/*.less', ['less']);
-  gulp.watch('assets/css/**/*.css', ['css']);
-  gulp.watch('assets/**/*.js', ['js']);
+gulp.task('mocha', function() {
+  return gulp.src('test/tests.js')
+  .pipe(mocha({reporter: 'nyan'}))
+  .once('error', function () {
+    process.exit(1);
+  })
+  .once('end', function () {
+    process.exit();
+  });
 });
+
+gulp.task('watch', function () {
+  gulp.watch('js/**/*.js',['js','mocha']);
+})
