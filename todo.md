@@ -1,5 +1,6 @@
 TODO
 ===================================================
 * [ ] add gulp-concat functionality to gulpfile
+* [ ] add default loading of jquery and bootstrap
 
-**last edited** Sun Jul 12 04:20:50 CDT 2015
+**last edited** Sun Jul 26 18:27:06 CDT 2015
