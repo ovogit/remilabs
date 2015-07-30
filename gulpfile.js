@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
 var babelify = require('babelify');
 
 gulp.task('js', function () {
@@ -11,6 +13,15 @@ gulp.task('js', function () {
   .bundle()
   .pipe(source('bundle.js'))
   .pipe(gulp.dest('js'));
+});
+
+gulp.task('build', function () {
+   gulp.src('js/bundle.js')
+  .pipe(buffer())
+  .pipe(uglify())
+  .pipe(gulp.dest('build/js'));
+   gulp.src('index.html')
+  .pipe(gulp.dest('build/'));
 });
 
 gulp.task('mocha', function() {
@@ -25,5 +36,5 @@ gulp.task('mocha', function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('js/**/*.js',['js','mocha']);
+  gulp.watch('js/**/*.js',['js']);
 })
