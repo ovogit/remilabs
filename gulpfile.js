@@ -36,5 +36,6 @@ gulp.task('mocha', function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('js/**/*.js',['js']);
+  gulp.watch('js/app.js',['js']);
+  gulp.watch('js/components/**/*.js',['js']);
 })
