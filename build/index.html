@@ -3,11 +3,90 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title></title>
+<title>Remi Labs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="node_modules/normalize.css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+    <div id="main">
+        <div id="header">
+            <div id="logo" class="pull-left">
+                <img src="img/logo.png" alt=""/>
+            </div>
+            <ul id="navigation" class="list-inline pull-right">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="clearfix"></div>
+            <div id="message"><h1>Adventures In Creative Design</h1></div>
+            <div id="cta">
+                <input type="text" value="" name="" placeholder="Share your email to stay in touch!" id="email"/>
+                <button type="submit" class="pull-right">SEND</button>
+            </div>
+            <div class="clearfix"></div>
+        </div><!-- end header-->
+        <div id="slide">
+            <div id="slide-content"><h1></h1></div>
+            <ul id="scene">
+              <li class="layer" data-depth="0.10"><img src="img/lines.png"></li>
+              <li class="layer" data-depth="0.15"><img src="img/dots.png" class="opacity"></li>
+              <li class="layer" data-depth="0.25"><img src="img/spikes.png" class="opacity"></li>
+            </ul>
+        </div><!-- end slide -->
+        <div id="content">
+            <div id="content-wrap">
+                <h1 class="hideme">Who are we?</h1>
+                <div class="bar hideme">&nbsp;</div>
+                <p class="hideme">Remilabs is a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lectus urna, laoreet quis tempus id, consequat eu libero. Aliquam dui tellus, fermentum ac velit nec, interdum imperdiet nunc. Pellentesque at libero ex. Aliquam erat volutpat. Curabitur malesuada imperdiet finibus. Proin pharetra ligula purus, eu ornare nisl posuere eget. Sed vitae rhoncus mi, a interdum est. Sed tempus tortor vitae posuere molestie.</p>        
+                <div id="contact" class="hideme">
+                    <ul class="list-inline">
+                        <li>
+                            <img src="img/location.jpg" alt=""/>
+                            <br />
+                            <em>Manhattan, KS</em>
+                        </li>
+                        <li>
+                            <img src="img/telephone.jpg" alt=""/>
+                            <br />
+                            <em>(785) 410-6655</em>
+                        </li>
+                        <li>
+                            <img src="img/email.jpg" alt=""/>
+                            <br />
+                            <em>contact@remilabs.com</em>
+                        </li>
+                </div>
+            </div><!-- end content-wrap -->
+        </div><!-- end content -->
+        <div class="clear-fix"></div>
+        <div class="clear-fix"></div>
+    </div><!-- end main -->
+        <div id="footer">
+            <div id="footer-wrap">
+                <div id="footer-cta" class="pull-left">
+                    <label for="email-footer">Sign up for the newsletter!</label>
+                <input type="text" value="" name="" placeholder="Share your email to stay in touch!" id="email-footer"/>
+                <button type="submit" class="pull-right">SEND</button>
+                </div><!-- end footer-cta -->
+                <div id="social" class="pull-right">
+                    <img src="img/linked-in.jpg" alt=""/>
+                    <img src="img/facebook.jpg" alt=""/>
+                    <img src="img/twitter.jpg" alt=""/>
+                </div>
+            </div>
+        </div>
 <script src="js/bundle.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/parallax.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
+
 </body>
 </html>
